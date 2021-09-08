@@ -277,7 +277,7 @@ module.exports = class trackSearcher {
   static extractTrackByYoutubeType(type, data, addedBy) {
     switch (type) {
       case TYPE_SONG: {
-        if (addedBy) data.addedBy = addedBy;
+        if (addedBy && data) data.addedBy = addedBy;
         return trackSearcher.youtubeDataToTrack(data);
       }
       case TYPE_PLAYLIST: {
